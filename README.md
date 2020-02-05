@@ -35,3 +35,5 @@ all songs of specific letter:
 show all songs start with the letter
 https://www.mima.co.il/song_letter.php?let=%D7%96
 
+one 2 many artist to song
+one 2 many facts to songs
