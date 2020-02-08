@@ -4,13 +4,19 @@
 <head>
     <link rel="stylesheet" href="{% static "vendor/bootstrap/css/bootstrap.css" %}">
     <link rel="stylesheet" href="{% static "css/style.css" %}">
-    <title>{% block title %}Artist: {{relevant_artist}}{% endblock %}</title>
+    <title>{% block title %}השירים של: {{relevant_artist}}{% endblock %}</title>
 </head>
-<body>
+<body dir="rtl">
+<h4 class="title_header">שם האומן: <h1 class="title">{{ relevant_artist }}</h1></h4>
 <ul>
     {% for song in artist_songs %}
-        <li><a href="/artist/{{ song.id }}/">{{ relevant_artist.song }}</a></li>
+        <li><a href="{% url "mima:facts" song.id %}">{{ song.song }}</a></li>
     {% endfor %}
     </ul>
+
+<footer>
+    Copyright 2020 created by Jonatan Menachem develop
+</footer>
+
 </body>
 </html>

@@ -19,7 +19,7 @@ class Song(models.Model):
     # artist.song and get all the song of that artist
 
     def __str__(self):
-        return f"Song {self.song} by {self.artist}"
+        return f"{self.song} - {self.artist}"
 
 
 class Facts(models.Model):
@@ -29,4 +29,5 @@ class Facts(models.Model):
     author = models.CharField(max_length=100, null=False, default='none')
 
     def __str__(self):
-        return f"This Fact{self.facts}\n was written by {self.author}"
+        return (f"{self.facts}\n"
+                f"נכתב עי: {self.author}")

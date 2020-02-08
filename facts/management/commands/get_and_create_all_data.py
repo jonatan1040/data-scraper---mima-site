@@ -28,6 +28,7 @@ class Command(BaseCommand):
                 all_facts = soup.find_all('tr', {'bgcolor': ['#CCFFCC', '#EDF3FE']})
                 for fact in range(len(all_facts)):
                     one_fact_each_time = all_facts[fact].text.strip().split('נכתב ע"י')
+                    # print(one_fact_each_time[0])
                     fact = one_fact_each_time[0].replace('\r\n', '')
                     try:
                         author = one_fact_each_time[1]
