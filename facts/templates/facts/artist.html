@@ -1,0 +1,16 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{% static "vendor/bootstrap/css/bootstrap.css" %}">
+    <link rel="stylesheet" href="{% static "css/style.css" %}">
+    <title>{% block title %}Artist: {{relevant_artist}}{% endblock %}</title>
+</head>
+<body>
+<ul>
+    {% for song in artist_songs %}
+        <li><a href="/artist/{{ song.id }}/">{{ relevant_artist.song }}</a></li>
+    {% endfor %}
+    </ul>
+</body>
+</html>

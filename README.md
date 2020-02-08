@@ -13,7 +13,9 @@ By Jonatan Menachem.
 * Run:
 
         pipenv install
+* Next, Run (will get all data from mima site and put it into DB):
 
+        m get_and_create_all_data
 
 ## REVERSE ENGINEERING
 Homepage:
@@ -37,3 +39,9 @@ https://www.mima.co.il/song_letter.php?let=%D7%96
 
 one 2 many artist to song
 one 2 many facts to songs
+
+
+## SPECIAL THANKS:
+
+i want to thanks James from appleseeds course
+for helping me with parts in this code

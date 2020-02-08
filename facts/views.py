@@ -1,11 +1,29 @@
-from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
+from facts.models import Artist, Song, Facts
 
 
-def facts(request):
-    return HttpResponse("Hello, world. You're at the polls index.")
+def get_artist(request, artist_number):
+    relevant_artist = get_object_or_404(Artist, pk=artist_number)
+    artist_songs = relevant_artist.artist.all
+    print(artist_songs)
+    return render(request, 'facts/artist.html', {'artist_songs': artist_songs, 'relevant_artist': relevant_artist})
+
+
+def get_song(request, song_number):
+    relevant_song = get_object_or_404(Song, pk=song_number)
+    artist_songs1 = relevant_song.song.all
+    return render(request, 'facts/song.html', {'artist_songs1': artist_songs1})
+
+
+def get_facts(request, facts_number):
+    relevant_fact = get_object_or_404(Facts, pk=facts_number)
+    artist_facts = relevant_fact.facts
+    return render(request, 'facts/fact.html', {'artist_facts': artist_facts})
+
+
+
     # str = "my name is jonatan"
-    # return render(request, "facts/facts.html", str)
+    # return render(request, "facts/song.html", str)
 
     # import calendar
     #
