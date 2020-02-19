@@ -13,6 +13,7 @@ By Jonatan Menachem.
 * Run:
 
         pipenv install
+        pipenv shell
 * Next, Run (will get all data from mima site and put it into DB):
 
         m get_and_create_all_data
@@ -41,7 +42,3 @@ one 2 many artist to song
 one 2 many facts to songs
 
 
-## SPECIAL THANKS:
-
-i want to thanks James from appleseeds course
-for helping me with parts in this code
